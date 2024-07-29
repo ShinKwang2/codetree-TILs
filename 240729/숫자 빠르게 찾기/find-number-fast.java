@@ -26,7 +26,7 @@ public class Main {
 
     static int binarySearch(int target) {
         int left = 0;
-        int right = arr.length;
+        int right = arr.length - 1;
 
         while (left <= right) {
             int mid = (left + right) / 2;
