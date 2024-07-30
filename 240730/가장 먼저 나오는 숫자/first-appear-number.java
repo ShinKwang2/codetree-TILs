@@ -42,6 +42,7 @@ public class Main {
                 left = mid + 1;
             }
         }
-        return arr[minIdx] == target ? minIdx + 1 : -1;
+        
+        return minIdx < arr.length && arr[minIdx] == target ? minIdx + 1 : -1;
     }
 }
