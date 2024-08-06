@@ -14,14 +14,12 @@ public class Main {
         M = Integer.parseInt(token.nextToken());
 
         arr = new int[N];
-        int minValue = Integer.MAX_VALUE;
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(br.readLine());
-            minValue = Math.min(minValue, arr[i]);
         }
 
         int left = 1;
-        int right = minValue;
+        int right = 100_000;
         int ans = 0;
 
         while (left <= right) {
