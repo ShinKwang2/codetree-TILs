@@ -18,7 +18,7 @@ public class Main {
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
-
+        Arrays.sort(arr);
         int MAX = arr[N - 1] - arr[0];
 
         int left = 1;
