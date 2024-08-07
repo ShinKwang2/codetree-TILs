@@ -6,7 +6,7 @@ public class Main {
     static int N;
     static int M;
     static long[] arr;
-    static long ans = Long.MAX_VALUE;
+    static long ans = 0;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,8 +28,8 @@ public class Main {
             long mid = (left + right) / 2L;
             long min = isPossible(mid);
             if (min != -1) {
-                ans = Math.min(ans, min);
                 right = mid - 1;
+                ans = Math.max(ans, min);
             }
             else {
                 left = mid + 1;
@@ -61,10 +61,10 @@ public class Main {
         min = Math.min(min, sum);
         // System.out.println("count : " + count);
         // System.out.println("min : " + min);
-        if (M - 2 < count) {
+        if (M < count + 2) {
             return -1L;
         }
-        else { // M -2 >= count
+        else { // M >= count + 2
             return min;
         }
     }
