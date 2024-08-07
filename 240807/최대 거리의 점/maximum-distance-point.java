@@ -5,8 +5,8 @@ public class Main {
 
     static int N;
     static int M;
-    static int[] arr;
-    static int ans = Integer.MAX_VALUE;
+    static long[] arr;
+    static long ans = Long.MAX_VALUE;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,19 +14,19 @@ public class Main {
         N = Integer.parseInt(token.nextToken());
         M = Integer.parseInt(token.nextToken());
 
-        arr = new int[N];
+        arr = new long[N];
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+            arr[i] = Long.parseLong(br.readLine());
         }
         Arrays.sort(arr);
-        int MAX = arr[N - 1] - arr[0];
+        long MAX = arr[N - 1] - arr[0];
 
-        int left = 1;
-        int right = MAX;
+        long left = 1L;
+        long right = MAX;
 
         while (left <= right) {
-            int mid = (left + right) / 2;
-            int min = isPossible(mid);
+            long mid = (left + right) / 2L;
+            long min = isPossible(mid);
             if (min != -1) {
                 ans = Math.min(ans, min);
                 right = mid - 1;
@@ -38,15 +38,15 @@ public class Main {
         System.out.println(ans);
     }
 
-    public static int isPossible(int limit) {
+    public static long isPossible(long limit) {
         int count = 0;
-        int sum = 0;
-        int min = Integer.MAX_VALUE;
+        long sum = 0L;
+        long min = Long.MAX_VALUE;
 
         for (int i = 1; i < N; i++) {
-            int range = arr[i] - arr[i - 1];
+            long range = arr[i] - arr[i - 1];
             if (range > limit) {
-                return -1;
+                return -1L;
             }
 
             if (sum + range > limit) {
@@ -62,9 +62,9 @@ public class Main {
         // System.out.println("count : " + count);
         // System.out.println("min : " + min);
         if (M - 2 < count) {
-            return -1;
+            return -1L;
         }
-        else {
+        else { // M -2 >= count
             return min;
         }
     }
