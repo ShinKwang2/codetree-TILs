@@ -4,14 +4,14 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
-        int N = kb.nextInt();
-        int min = Integer.MAX_VALUE;
+        long N = kb.nextLong();
+        long min = Long.MAX_VALUE;
 
-        int left = 1;
-        int right = Integer.MAX_VALUE;
+        long left = 1L;
+        long right = Long.MAX_VALUE - 1L;
 
         while (left <= right) {
-            int mid = (left + right) / 2;
+            long mid = (left + right) / 2;
 
             if (getNumberCount(mid) >= N) {
                 min = Math.min(min, mid);
@@ -21,17 +21,11 @@ public class Main {
                 left = mid + 1;
             }
         }
-
         System.out.println(min);
     }
 
-    public static int getNumberCount(int target) {
-        int byThree = target / 3;
-        int byFive = target / 5;
-        int same = target / 15;
-
-        int tmp = byThree + byFive - same;
-
+    public static long getNumberCount(long target) {
+        long tmp = (target / 3) + (target / 5) - (target / 15);
         return target - tmp;
     }
 }
