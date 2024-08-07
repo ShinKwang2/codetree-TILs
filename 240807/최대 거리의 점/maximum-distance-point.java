@@ -27,7 +27,7 @@ public class Main {
         while (left <= right) {
             int mid = (left + right) / 2;
             int min = isPossible(mid);
-            if (min > 0) {
+            if (min != -1) {
                 ans = Math.min(ans, min);
                 right = mid - 1;
             }
