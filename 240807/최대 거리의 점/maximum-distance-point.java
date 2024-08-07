@@ -28,11 +28,11 @@ public class Main {
             long mid = (left + right) / 2L;
             long min = isPossible(mid);
             if (min != -1) {
-                right = mid - 1;
-                ans = Math.min(ans, min);
+                left = mid + 1;
+                ans = Math.max(ans, min);
             }
             else {
-                left = mid + 1;
+                right = mid - 1;
             }
         }
         System.out.println(ans);
@@ -61,11 +61,11 @@ public class Main {
         min = Math.min(min, sum);
         // System.out.println("count : " + count);
         // System.out.println("min : " + min);
-        if (M < count + 2) {
-            return -1L;
+        if (M <= count + 2) {
+            return min;
         }
         else { // M >= count + 2
-            return min;
+            return -1;
         }
     }
 }
