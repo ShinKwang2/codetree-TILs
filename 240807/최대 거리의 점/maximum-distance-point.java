@@ -29,7 +29,7 @@ public class Main {
             long min = isPossible(mid);
             if (min != -1) {
                 right = mid - 1;
-                ans = Math.max(ans, min);
+                ans = Math.min(ans, min);
             }
             else {
                 left = mid + 1;
