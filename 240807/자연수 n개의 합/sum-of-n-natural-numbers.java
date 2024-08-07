@@ -7,7 +7,7 @@ public class Main {
         long S = kb.nextLong();
 
         long left = 1L;
-        long right = 200_000_000_000L;
+        long right = 20_000_000_000L;
         long maxNum = 0L;
 
         while (left <= right) {
