@@ -6,6 +6,11 @@ public class Main {
         Scanner kb = new Scanner(System.in);
         int N = kb.nextInt();
 
+        if (N <= 2) {
+            System.out.println(1);
+            return;
+        }
+
         int[] dp = new int[N + 1];
         dp[1] = 1;
         dp[2] = 1;
