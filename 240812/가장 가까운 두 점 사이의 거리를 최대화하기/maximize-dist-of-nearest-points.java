@@ -21,7 +21,7 @@ public class Main {
         Arrays.sort(segments, 0, N);
         
         int lo = 1;                               // 답이 될 수 있는 가장 작은 숫자 값을 설정합니다.
-        int hi = 1_000_000_000;                   // 답이 될 수 있는  가장 큰 숫자 값을 설정합니다.
+        int hi = (int)1e9;                        // 답이 될 수 있는  가장 큰 숫자 값을 설정합니다.
         int ans = 0;                              // 답을 저장합니다.
         
         while(lo <= hi) {                         // [lo, hi]가 유효한 구간이면 계속 수행합니다.
@@ -65,8 +65,8 @@ public class Main {
         }
         @Override
         public int compareTo(Pair b) {
-            if (start != b.start) return end - b.end;
-            return start - b.start;
+            if (start != b.start) return start - b.start;
+            return end - b.end;
         }
     }
 }
