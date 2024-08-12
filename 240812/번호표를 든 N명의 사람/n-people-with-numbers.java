@@ -37,7 +37,7 @@ public class Main {
 
     static boolean isPossible(int size) {
         Queue<Integer> pq = new PriorityQueue<>();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < (size < N ? size : N); i++) {
             pq.add(people[i]);
         }
         for (int i = size; i < N; i++) {
