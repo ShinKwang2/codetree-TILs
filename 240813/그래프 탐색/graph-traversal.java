@@ -33,17 +33,17 @@ public class Main {
             adjList[end].add(start);
         }
 
-        visited = new boolean[N + 1];
-        visited[1] = true;
-        count = 0;
-        dfs_adjMatrix(1);
-        System.out.println(count);
-
         // visited = new boolean[N + 1];
         // visited[1] = true;
         // count = 0;
-        // dfs_adjList(1);
+        // dfs_adjMatrix(1);
         // System.out.println(count);
+
+        visited = new boolean[N + 1];
+        visited[1] = true;
+        count = 0;
+        dfs_adjList(1);
+        System.out.println(count);
     }
 
     public static void dfs_adjMatrix(int node) {
