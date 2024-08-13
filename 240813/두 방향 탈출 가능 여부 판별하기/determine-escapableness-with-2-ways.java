@@ -10,6 +10,8 @@ public class Main {
     static int[] dr = {1, 0};
     static int[] dc = {0, 1};
 
+    static boolean flag = false;
+
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         N = kb.nextInt();
@@ -24,11 +26,13 @@ public class Main {
 
         visited = new boolean[N][M];
         visited[0][0] = true;
-        boolean ans = dfs(0, 0);
-        System.out.println(ans ? 1 : 0);
+        dfs(0, 0);
+        System.out.println(flag ? 1 : 0);
     }
 
-    public static boolean dfs(int r, int c) {
+    public static void dfs(int r, int c) {
+        // System.out.println("r: " + r + "c: " + c);
+
         for (int d = 0; d < 2; d++) {
             int nextRow = r + dr[d];
             int nextCol = c + dc[d];
@@ -37,10 +41,14 @@ public class Main {
             if (visited[nextRow][nextCol]) continue; // 이미 방문
             if (map[nextRow][nextCol] == 0) continue; // 뱀자리
 
-            if (nextRow == N - 1 && nextCol == M - 1) return true;
+            // System.out.println("nextRow: " + nextRow + " nextCol: " + nextCol);
+            // System.out.println("N: " + N + " M: " + M);
+
+            if (nextRow == N - 1 && nextCol == M - 1) {
+                flag = true;
+            }
             visited[nextRow][nextCol] = true;
             dfs(nextRow, nextCol);
         }
-        return false;
     }
 }
