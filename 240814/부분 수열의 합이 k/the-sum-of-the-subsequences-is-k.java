@@ -23,11 +23,12 @@ public class Main {
 
         while (right <= n) {
             int value = prefixSum[right] - prefixSum[left];
-            if (value < k) {
+            if (value <= k) {
+                if (value == k) cnt++;
                 right++;
             }
             else {
-                if (value == k) cnt++;
+                
                 left++;
             }
         }
