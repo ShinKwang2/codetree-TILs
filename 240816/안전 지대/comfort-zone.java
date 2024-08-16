@@ -26,7 +26,7 @@ public class Main {
             }
         }
 
-        int max = 0;
+        int max = 1;
         int maxValue = 0;
 
         for (int k = 1; k <= MAX_K; k++) {
