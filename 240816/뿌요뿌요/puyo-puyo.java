@@ -10,7 +10,6 @@ public class Main {
     static int[] dr = {-1, 0, 1, 0};
     static int[] dc = {0, -1, 0, 1};
 
-    static int cnt;
     static int block;
     static int bombCnt = 0;
     static int maxBlock = 0;
@@ -33,7 +32,7 @@ public class Main {
                     visited[r][c] = true;
                     DFS(r, c, grid[r][c]);
 
-                    if (cnt >= 4) {
+                    if (block >= 4) {
                         bombCnt++;
                     }
                     maxBlock = Math.max(maxBlock, block);
@@ -53,7 +52,6 @@ public class Main {
             if (visited[nextRow][nextCol]) continue;
             if (grid[nextRow][nextCol] != flag) continue;
 
-            cnt++;
             block++;
             visited[nextRow][nextCol] = true;
             DFS(nextRow, nextCol, flag);
