@@ -45,7 +45,7 @@ public class Main {
                 int nextRow = curRow + dr[d];
                 int nextCol = curCol + dc[d];
 
-                if (nextRow < 0 || N <= nextRow || nextCol < 0 || M < nextCol) continue;
+                if (nextRow < 0 || N <= nextRow || nextCol < 0 || M <= nextCol) continue;
                 if (visited[nextRow][nextCol]) continue;
                 if (grid[nextRow][nextCol] == 0) continue;
 
