@@ -18,7 +18,7 @@ public class Main {
         M = kb.nextInt();
 
         for (int r = 0; r < N; r++) {
-            for (int c = 0; c < N; c++) {
+            for (int c = 0; c < M; c++) {
                 grid[r][c] = kb.nextInt();
             }
         }
