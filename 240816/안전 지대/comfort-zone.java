@@ -26,8 +26,8 @@ public class Main {
             }
         }
 
-        int max = 1;
-        int maxValue = 0;
+        int max = 0;
+        int maxValue = -1;
 
         for (int k = 1; k <= MAX_K; k++) {
             visited = new boolean[N][M];
