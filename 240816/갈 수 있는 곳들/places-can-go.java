@@ -22,13 +22,16 @@ public class Main {
             }
         }
 
+        int ans = 0;
         for (int i = 0; i < K; i++) {
             int startRow = kb.nextInt() - 1;
             int startCol = kb.nextInt() - 1;
 
             if (!visited[startRow][startCol])
-                System.out.println(BFS(startRow, startCol));
+                ans += BFS(startRow, startCol);
         }
+
+        System.out.println(ans);
     }
 
     public static int BFS(int r, int c) {
