@@ -27,7 +27,6 @@ public class Main {
         for (int r = 0; r < N; r++) {
             for (int c = 0; c < N; c++) {
                 if (!visited[r][c]) {
-                    cnt = 1;
                     block = 1;
                     visited[r][c] = true;
                     DFS(r, c, grid[r][c]);
