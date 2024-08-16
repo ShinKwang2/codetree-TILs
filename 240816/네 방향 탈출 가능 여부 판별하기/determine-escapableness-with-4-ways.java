@@ -50,6 +50,7 @@ public class Main {
                 if (grid[nextRow][nextCol] == 0) continue;
 
                 visited[nextRow][nextCol] = true;
+                if (nextRow == N -1 && nextCol == M - 1) return;
                 q.add(new int[]{nextRow, nextCol});
             }
         }
