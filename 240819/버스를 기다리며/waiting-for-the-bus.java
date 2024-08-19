@@ -25,7 +25,7 @@ public class Main {
 
 
         int left = 0;
-        int right = 10;
+        int right = 1_000_000_000;
 
         while (left <= right) {
             int mid = (left + right) / 2;
