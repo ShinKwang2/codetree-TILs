@@ -42,7 +42,6 @@ public class Main {
         
         int left = 0;
         int right = 1_000_000_000;
-        right = 50;
 
         while (left <= right) {
             int mid = (left + right) / 2;
