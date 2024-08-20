@@ -29,7 +29,7 @@ public class Main {
         double right = LIMIT;
         double ans = Double.MAX_VALUE;
 
-        for (int i = 1; i <= 1_000_000; i++) {
+        for (int i = 1; i <= 1_000; i++) {
             double mid = (left + right) / 2;
 
             if (isPossible(mid)) {
