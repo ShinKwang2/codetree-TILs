@@ -27,7 +27,10 @@ public class Main {
         endCol = kb.nextInt() - 1;
         
         BFS(startRow, startCol);
-        System.out.println(steps[endRow][endCol]);
+        if (visited[endRow][endCol])
+            System.out.println(steps[endRow][endCol]);
+        else
+            System.out.println("-1");
     }
 
     public static void push(int r, int c, int step) {
