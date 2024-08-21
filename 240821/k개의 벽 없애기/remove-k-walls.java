@@ -36,10 +36,10 @@ public class Main {
         endRow = kb.nextInt() - 1;
         endCol = kb.nextInt() - 1;
 
-        BFS(startRow, startCol, K, 0);
+        BFS(startRow, startCol, K);
         System.out.println(ans);
     }
-    public static void BFS(int r, int c, int blockCnt, int time) {
+    public static void BFS(int r, int c, int blockCnt) {
         visited[blockCnt][r][c] = true;
         q.add(new Node(r, c, blockCnt, 0));
 
@@ -48,6 +48,7 @@ public class Main {
 
             if (cur.row == endRow && cur.col == endCol) {
                 ans = cur.time;
+                break;
             }
 
             for (int d = 0; d < 4; d++) {
